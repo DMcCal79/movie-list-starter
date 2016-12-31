@@ -14,7 +14,7 @@ class Movie extends Component {
           <div className='short-plot'>
             <p>{this.props.plot}</p>
           </div>
-          <button>Add Movie</button>
+          <button>Add Movie Title</button>
         </li>
       // </div>
     );
