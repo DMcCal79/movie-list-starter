@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
-import MovieList from './MovieList';
+import ShortProfile from './ShortProfile';
 import axios from 'axios';
 
 class App extends Component {
@@ -51,7 +51,7 @@ class App extends Component {
     return (
       <div className='App'>
         <SearchBar value={this.state.searchText} onChange={this.handleSearchBarChange.bind(this)} onSearch={this.getFilteredMovies.bind(this)} />
-        <MovieList movies={this.state.movies} />
+        <ShortProfile movies={this.state.movies} />
       </div>
     );
   }

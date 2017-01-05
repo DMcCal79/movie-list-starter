@@ -10,7 +10,17 @@ body {
 }
 
 .movie {
+  /*display: inline-block;*/
+  margin-left: 5%;
+  margin-top: 20px;
+}
+
+.short-summary {
   display: inline-block;
+}
+
+.poster {
+
 }
 
 li {
