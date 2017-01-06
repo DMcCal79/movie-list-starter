@@ -6,6 +6,9 @@ class ShortProfile extends Component {
     return (
       <div className="short-profile">
         {this.props.movies.map(movie => {
+         if(movie.Response === 'False') {
+           return <h2>Movie not Found!</h2>
+         }
           return (
              <Movie
                key={movie.imdbID}

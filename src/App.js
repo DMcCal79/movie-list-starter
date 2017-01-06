@@ -42,8 +42,9 @@ class App extends Component {
         this.setState({
           searchText: this.state.searchText,
           movies: [resp.data]
-        })
-      });
+        });
+      })
+      .catch(err => console.log(`Error! ${err}`));
   }
 
 
