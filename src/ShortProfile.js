@@ -27,15 +27,3 @@ class ShortProfile extends Component {
 
 
 export default ShortProfile;
-
-
-
-
-
-
-
-
-
-
-
-// export default MovieList;

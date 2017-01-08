@@ -38,20 +38,40 @@ class App extends Component {
     axios.get(`http://www.omdbapi.com/?t=${term}&plot=short&r=json`)
 
       .then(resp => {
-
         this.setState({
-          searchText: this.state.searchText,
+          searchText: '',
           movies: [resp.data]
         });
       })
       .catch(err => console.log(`Error! ${err}`));
   }
 
+ //This will allow the user to execute the search by simply pressing "enter" instead
+ //of having to click on search.  
+  getFilteredMoviesKeyPress(target) {
+
+    const term = this.state.searchText.trim().toLowerCase();
+
+    if (target.charCode===13) {
+      axios.get(`http://www.omdbapi.com/?t=${term}&plot=short&r=json`)
+
+        .then(resp => {
+          this.setState({
+            searchText: '',
+            movies: [resp.data]
+          });
+        })
+        .catch(err => console.log(`Error! ${err}`));
+    }
+
+    }
+
 
   render() {
     return (
       <div className='App'>
-        <SearchBar value={this.state.searchText} onChange={this.handleSearchBarChange.bind(this)} onSearch={this.getFilteredMovies.bind(this)} />
+        <SearchBar value={this.state.searchText} onChange={this.handleSearchBarChange.bind(this)} onSearch={this.getFilteredMovies.bind(this)}
+         onSearchKey={this.getFilteredMoviesKeyPress.bind(this)} />
         <ShortProfile movies={this.state.movies} />
       </div>
     );
