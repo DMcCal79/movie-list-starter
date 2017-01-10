@@ -16,6 +16,7 @@ class ShortProfile extends Component {
                year={this.props.movies.Year}
                plot={this.props.movies.Plot}
                onAdd={this.props.onAdd}
+               onDiscard={this.props.onDiscard}
               />
       </div>
     )};

@@ -10,6 +10,9 @@ class Movie extends Component {
           <div className='poster'>
             <img src={this.props.poster} alt='poster'/>
           </div>
+          <div>
+            <button onClick={() => this.props.onDiscard()}>x</button>
+          </div>
           <div className='short-summary'>
             <div className='title'>
               <h3>{this.props.title}  ({this.props.year})</h3>

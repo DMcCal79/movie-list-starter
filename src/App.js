@@ -83,13 +83,21 @@ class App extends Component {
     }
   }
 
+  discardFilteredMovie() {
+    this.setState({
+      searchText: '',
+      movies: [],
+      userMoviesList: this.state.userMoviesList
+    });
+  }
+
 
   render() {
     return (
       <div className='App'>
         <SearchBar value={this.state.searchText} onChange={this.handleSearchBarChange.bind(this)} onSearch={this.getFilteredMovies.bind(this)}
          onSearchKey={this.getFilteredMoviesKeyPress.bind(this)} />
-        <ShortProfile movies={this.state.movies} onAdd={this.handleAddMovie.bind(this)} />
+        <ShortProfile movies={this.state.movies} onAdd={this.handleAddMovie.bind(this)} onDiscard={this.discardFilteredMovie.bind(this)} />
         <MovieList userMovies={this.state.userMoviesList} />
       </div>
     );
