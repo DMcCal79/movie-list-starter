@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 class Movie extends Component {
  render() {
+   if(!this.props.id) {
+     return null;
+   }
     return (
         <div className='movie'>
           <div className='poster'>
@@ -14,8 +17,8 @@ class Movie extends Component {
             <div className='short-plot'>
               <p>{this.props.plot}</p>
             </div>
-            <button>Add Movie Title</button>
-          </div>  
+            <button onClick={() => this.props.onAdd()}>Add Movie Title</button>
+          </div>
         </div>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 import ShortProfile from './ShortProfile';
+import MovieList from './MovieList';
 import axios from 'axios';
 
 class App extends Component {
@@ -9,25 +10,40 @@ class App extends Component {
 
     this.state = {
       searchText: '',
-      movies: []
+      movies: [],
+      userMoviesList: [],
     };
   }
 
-  // componentDidMount() {
-  //     axios.get(`http://www.omdbapi.com/?t=${this.state.searchText}&y=&plot=short&r=json`)
-  //       .then(resp => {
-  //         this.setState({
-  //           searchText: this.state.searchText,
-  //           movies: [resp.data]
-  //         })
-  //       })
-  //       .catch(err => console.log(`Error! ${err}`));
-  //   }
+  componentDidMount() {
+    const userSavedMoviesList = JSON.parse(localStorage.getItem('userMoviesList'));
+
+    if(userSavedMoviesList) {
+      this.setState({
+        searchText: '',
+        movies: [],
+        userMoviesList: userSavedMoviesList
+      });
+    }
+  }
+
+  handleAddMovie() {
+    const userMoviesList = [this.state.movies, ...this.state.userMoviesList];
+
+    this.setState({
+      searchText: '',
+      movies: [],
+      userMoviesList: userMoviesList
+    });
+
+    localStorage.setItem('userMoviesList', JSON.stringify(userMoviesList));
+  }
 
   handleSearchBarChange(event) {
     this.setState({
       movies: this.state.movies,
-      searchText: event.target.value
+      searchText: event.target.value,
+      userMoviesList: this.state.userMoviesList
     })
   }
 
@@ -40,14 +56,15 @@ class App extends Component {
       .then(resp => {
         this.setState({
           searchText: '',
-          movies: [resp.data]
+          movies: resp.data,
+          userMoviesList: this.state.userMoviesList
         });
       })
       .catch(err => console.log(`Error! ${err}`));
   }
 
  //This will allow the user to execute the search by simply pressing "enter" instead
- //of having to click on search.  
+ //of  having to click on search.
   getFilteredMoviesKeyPress(target) {
 
     const term = this.state.searchText.trim().toLowerCase();
@@ -58,13 +75,13 @@ class App extends Component {
         .then(resp => {
           this.setState({
             searchText: '',
-            movies: [resp.data]
+            movies: resp.data,
+            userMoviesList: this.state.userMoviesList
           });
         })
         .catch(err => console.log(`Error! ${err}`));
     }
-
-    }
+  }
 
 
   render() {
@@ -72,7 +89,8 @@ class App extends Component {
       <div className='App'>
         <SearchBar value={this.state.searchText} onChange={this.handleSearchBarChange.bind(this)} onSearch={this.getFilteredMovies.bind(this)}
          onSearchKey={this.getFilteredMoviesKeyPress.bind(this)} />
-        <ShortProfile movies={this.state.movies} />
+        <ShortProfile movies={this.state.movies} onAdd={this.handleAddMovie.bind(this)} />
+        <MovieList userMovies={this.state.userMoviesList} />
       </div>
     );
   }
