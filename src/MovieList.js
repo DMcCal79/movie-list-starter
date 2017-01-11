@@ -15,6 +15,7 @@ class MovieList extends Component {
               poster={movie.Poster}
               title={movie.Title}
               year={movie.Year}
+              onRemove={this.props.onRemove}
             />
           );
         })}

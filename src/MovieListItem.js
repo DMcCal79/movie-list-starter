@@ -11,6 +11,9 @@ class MovieListItem extends Component {
           <div className='movie-item-title'>
             <h5>{this.props.title} ({this.props.year})</h5>
           </div>
+          <div>
+            <button onClick={() => this.props.onRemove(this.props.id)}>Remove</button>
+          </div>
         </div>
       </li>
     );

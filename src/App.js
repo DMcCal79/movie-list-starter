@@ -91,6 +91,19 @@ class App extends Component {
     });
   }
 
+  removeMovieListItem(id) {
+
+    const userSavedMoviesList = JSON.parse(localStorage.getItem('userMoviesList'));
+    const listItem = userSavedMoviesList.map(movie => { return movie.imdbID }).indexOf(id)
+    const revisedList = userSavedMoviesList.slice(0, listItem).concat(userSavedMoviesList.slice(listItem + 1));
+      this.setState({
+        searchText: '',
+        movies: this.state.movies,
+        userMoviesList: revisedList
+      });
+      localStorage.setItem('userMoviesList', JSON.stringify(revisedList));
+  }
+
 
   render() {
     return (
@@ -98,7 +111,7 @@ class App extends Component {
         <SearchBar value={this.state.searchText} onChange={this.handleSearchBarChange.bind(this)} onSearch={this.getFilteredMovies.bind(this)}
          onSearchKey={this.getFilteredMoviesKeyPress.bind(this)} />
         <ShortProfile movies={this.state.movies} onAdd={this.handleAddMovie.bind(this)} onDiscard={this.discardFilteredMovie.bind(this)} />
-        <MovieList userMovies={this.state.userMoviesList} />
+        <MovieList userMovies={this.state.userMoviesList} onRemove={this.removeMovieListItem.bind(this)} />
       </div>
     );
   }
