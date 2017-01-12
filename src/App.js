@@ -94,7 +94,7 @@ class App extends Component {
   removeMovieListItem(id) {
 
     const userSavedMoviesList = JSON.parse(localStorage.getItem('userMoviesList'));
-    const listItem = userSavedMoviesList.map(movie => { return movie.imdbID }).indexOf(id)
+    const listItem = userSavedMoviesList.map(movie => { return movie.imdbID }).indexOf(id);
     const revisedList = userSavedMoviesList.slice(0, listItem).concat(userSavedMoviesList.slice(listItem + 1));
       this.setState({
         searchText: '',

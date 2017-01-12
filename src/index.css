@@ -30,8 +30,16 @@ body {
 
 }
 
-li {
+.movie-list-item {
   list-style-type: none;
   display: inline;
   float: left;
+}
+
+.long-prof-facts {
+  list-style-type: none;
+}
+
+.remove-list-item {
+  display: inline-block;
 }
