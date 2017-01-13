@@ -25,6 +25,16 @@ const Movie = (props) => {
     );
 };
 
+Movie.propTypes = {
+  id: React.PropTypes.string.isRequired,
+  poster: React.PropTypes.string.isRequired,
+  onDiscard: React.PropTypes.func.isRequried,
+  title: React.PropTypes.string.isRequired,
+  year: React.PropTypes.string.isRequired,
+  plot: React.PropTypes.string.isRequired,
+  onAdd: React.PropTypes.func.isRequired
+};
+
 
 
 export default Movie;

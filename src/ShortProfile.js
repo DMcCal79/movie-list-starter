@@ -22,6 +22,12 @@ const ShortProfile = (props) => {
     );
   }
 
+ShortProfile.propTypes = {
+  movies: React.PropTypes.object.isRequired,
+  onAdd: React.PropTypes.func.isRequired,
+  onDiscard: React.PropTypes.func.isRequired
+};
+
 
 
 export default ShortProfile;

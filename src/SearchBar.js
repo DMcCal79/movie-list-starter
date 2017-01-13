@@ -17,13 +17,12 @@ const SearchBar = (props) => {
 }
 
 
-
-
-
-
-
-
-
+SearchBar.propTypes = {
+  value: React.PropTypes.string.isRequired,
+  onChange: React.PropTypes.func.isRequired,
+  onSearchKey: React.PropTypes.func.isRequired,
+  onSearch: React.PropTypes.func.isRequired
+};
 
 
 export default SearchBar;

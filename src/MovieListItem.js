@@ -21,4 +21,14 @@ const MovieListItem = (props) => {
     );
 }
 
+MovieListItem.propTypes = {
+  id: React.PropTypes.string.isRequired,
+  poster: React.PropTypes.string.isRequired,
+  title: React.PropTypes.string.isRequired,
+  year: React.PropTypes.string.isRequired,
+  onRemove: React.PropTypes.func.isRequired
+
+};
+
+
 export default MovieListItem;

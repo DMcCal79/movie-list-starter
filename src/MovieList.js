@@ -24,4 +24,9 @@ const MovieList = (props) => {
     );
 }
 
+MovieList.propTypes = {
+  userMovies: React.PropTypes.array.isRequired,
+  onRemove: React.PropTypes.func.isRequired
+};
+
 export default MovieList;
