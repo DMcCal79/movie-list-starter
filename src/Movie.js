@@ -1,30 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Movie extends Component {
- render() {
-   if(!this.props.id) {
+const Movie = (props) => {
+   if(!props.id) {
      return null;
    }
     return (
         <div className='movie'>
           <div className='poster'>
-            <img src={this.props.poster} alt='poster'/>
+            <img src={props.poster} alt='poster'/>
           </div>
           <div>
-            <button onClick={() => this.props.onDiscard()}>x</button>
+            <button onClick={() => props.onDiscard()}>x</button>
           </div>
           <div className='short-summary'>
             <div className='title'>
-              <h3>{this.props.title}  ({this.props.year})</h3>
+              <h3>{props.title}  ({props.year})</h3>
             </div>
             <div className='short-plot'>
-              <p>{this.props.plot}</p>
+              <p>{props.plot}</p>
             </div>
-            <button onClick={() => this.props.onAdd()}>Add Movie Title</button>
+            <button onClick={() => props.onAdd()}>Add Movie Title</button>
           </div>
         </div>
     );
-  }
 };
 
 

@@ -1,21 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class SearchBar extends Component {
-  render() {
-    return(
+const SearchBar = (props) => {
+    return (
       <div className='search'>
           <input
             className='search-bar'
             type='text'
             placeholder='Search Movies'
-            value={this.props.value}
-            onChange={ event => this.props.onChange(event) }
-            onKeyPress={ target => this.props.onSearchKey(target) }
+            value={props.value}
+            onChange={ event => props.onChange(event) }
+            onKeyPress={ target => props.onSearchKey(target) }
            />
-           <input type='button' className="search-button"  onClick={() =>this.props.onSearch()} value='Search'/>
+           <input type='button' className="search-button"  onClick={() =>props.onSearch()} value='Search'/>
        </div>
     );
-  }
 }
 
 

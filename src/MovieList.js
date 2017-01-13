@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import MovieListItem from './MovieListItem';
 
 
-class MovieList extends Component {
-  render() {
+const MovieList = (props) => {
     return(
       <div>
         <ul className='movie-list'>
-        {this.props.userMovies.map(movie => {
+        {props.userMovies.map(movie => {
           return(
             <MovieListItem
               key={movie.imdbID}
@@ -15,7 +14,7 @@ class MovieList extends Component {
               poster={movie.Poster}
               title={movie.Title}
               year={movie.Year}
-              onRemove={this.props.onRemove}
+              onRemove={props.onRemove}
             />
           );
         })}
@@ -23,7 +22,6 @@ class MovieList extends Component {
         </ul>
       </div>
     );
-  }
 }
 
 export default MovieList;

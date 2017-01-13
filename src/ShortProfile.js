@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Movie from './Movie';
 
-class ShortProfile extends Component {
-  render() {
-    if (this.props.movies.Response === 'False') {
+const ShortProfile = (props) => {
+
+    if (props.movies.Response === 'False') {
       return <h2>Movie not found!</h2>
     }
     return (
       <div className="short-profile">
              <Movie
-               key={this.props.movies.imdbID}
-               id={this.props.movies.imdbID}
-               poster={this.props.movies.Poster}
-               title={this.props.movies.Title}
-               year={this.props.movies.Year}
-               plot={this.props.movies.Plot}
-               onAdd={this.props.onAdd}
-               onDiscard={this.props.onDiscard}
+               key={props.movies.imdbID}
+               id={props.movies.imdbID}
+               poster={props.movies.Poster}
+               title={props.movies.Title}
+               year={props.movies.Year}
+               plot={props.movies.Plot}
+               onAdd={props.onAdd}
+               onDiscard={props.onDiscard}
               />
       </div>
-    )};
+    );
   }
 
 
