@@ -1,18 +1,25 @@
 import React from 'react';
+import  {Button, Glyphicon, Grid, Row, Col } from 'react-bootstrap'
 
 const SearchBar = (props) => {
     return (
-      <div className='search'>
-          <input
-            className='search-bar'
-            type='text'
-            placeholder='Search Movies'
-            value={props.value}
-            onChange={ event => props.onChange(event) }
-            onKeyPress={ target => props.onSearchKey(target) }
-           />
-           <input type='button' className="search-button"  onClick={() =>props.onSearch()} value='Search'/>
-       </div>
+      <Grid>
+        <Row>
+          <Col className='search' md={12}>
+              <h1>Movie Quest</h1>
+                <div className='search-bar'>
+                  <input
+                    type='text'
+                    placeholder='Search by movie title'
+                    value={props.value}
+                    onChange={ event => props.onChange(event) }
+                    onKeyPress={ target => props.onSearchKey(target) }
+                   />
+                  <Button bsSize='md' bsStyle='primary' className="search-button"  onClick={() =>props.onSearch()}><Glyphicon glyph='search'/></Button>
+                </div>
+          </Col>
+        </Row>
+      </Grid>
     );
 }
 

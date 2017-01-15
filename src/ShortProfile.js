@@ -1,24 +1,31 @@
 import React from 'react';
 import Movie from './Movie';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 const ShortProfile = (props) => {
 
     if (props.movies.Response === 'False') {
-      return <h2>Movie not found!</h2>
+      return <h2 id='not-found'>Movie not found!</h2>
     }
     return (
-      <div className="short-profile">
-             <Movie
-               key={props.movies.imdbID}
-               id={props.movies.imdbID}
-               poster={props.movies.Poster}
-               title={props.movies.Title}
-               year={props.movies.Year}
-               plot={props.movies.Plot}
-               onAdd={props.onAdd}
-               onDiscard={props.onDiscard}
-              />
-      </div>
+      <Grid>
+        <Row>
+          <Col md={10} mdOffest={1}>
+            <div className="short-profile">
+                   <Movie
+                     key={props.movies.imdbID}
+                     id={props.movies.imdbID}
+                     poster={props.movies.Poster}
+                     title={props.movies.Title}
+                     year={props.movies.Year}
+                     plot={props.movies.Plot}
+                     onAdd={props.onAdd}
+                     onDiscard={props.onDiscard}
+                    />
+            </div>
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 

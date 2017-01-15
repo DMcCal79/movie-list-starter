@@ -5,15 +5,25 @@ body {
 }
 
 .search {
-  margin: auto;
-  width: 60%;
+  width: 100%;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
+.search h1 {
+  margin-bottom: 20px;
+}
 
-.search-bar {
-  width: 65%;
-  margin: auto;
+.search input {
+  width: 80%;
+  height: 32px;
+}
 
+.search-button {
+  margin-left: 1%;
+}
+.short-prof-discard {
+  display: inline;
 }
 
 .movie {
@@ -24,16 +34,37 @@ body {
 
 .short-summary {
   display: inline-block;
+  padding-top: 150px;
 }
 
+.short-profile {
+  margin-bottom: 50px;
+}
+
+.add-movie {
+  margin-top:
+    30px;
+  }
+
+#not-found {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 40px;
+}
 .poster {
 
 }
 
+.movie-list {
+  padding-left: 0;
+}
+
+
+
 .movie-list-item {
   list-style-type: none;
   display: inline;
-  float: left;
+  text-align: center;
 }
 
 .long-prof-facts {
@@ -42,4 +73,39 @@ body {
 
 .remove-list-item {
   display: inline-block;
+  height: 225px
+}
+
+.movie-item a {
+  text-decoration: none;
+}
+
+.movie-item-poster img {
+  width: 70%;
+  height: auto;
+}
+
+.movie-item-button  {
+  position: absolute;
+  bottom: 55px;
+  left: 25%;
+  right: 25%;
+}
+
+.movie-item-year {
+  position: absolute;
+  bottom: 80px;
+  left: 25%;
+  right: 25%;
+}
+
+.movie-item-title {
+  position: absolute;
+  bottom: 100px;
+  left: 10%;
+  right: 10%;
+}
+
+.movie-list-container {
+  height: 320px;
 }

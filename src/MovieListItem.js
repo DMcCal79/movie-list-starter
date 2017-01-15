@@ -1,20 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
+import { Button, Glyphicon } from 'react-bootstrap'
 
 const MovieListItem = (props) => {
     return(
         <li className='movie-list-item'>
           <div className='movie-item'>
-          <Link to={`/movie/${props.id}`} className='long-prof-link'>
-            <div className='movie-item-poster'>
-              <img src={props.poster} alt='movie-list-poster'/>
-            </div>
-            <div className='movie-item-title'>
-              <h5>{props.title} ({props.year})</h5>
-            </div>
+            <Link to={`/movie/${props.id}`} className='long-prof-link'>
+              <div className='movie-item-poster'>
+                <img src={props.poster} alt='movie-list-poster'/>
+              </div>
+                <h5 className='movie-item-title'>{props.title}</h5>
+                <h5 className='movie-item-year'>({props.year})</h5>
             </Link>
-            <div>
-              <button onClick={() => props.onRemove(props.id)}>Remove</button>
+            <div className='movie-item-button'>
+              <Button bsSize='xsmall' bsStyle='danger' onClick={() => props.onRemove(props.id)}><Glyphicon glyph='remove'/></Button>
             </div>
           </div>
         </li>

@@ -1,27 +1,36 @@
 import React from 'react';
+import { Button, Glyphicon, Grid, Row, Col } from 'react-bootstrap';
 
 const Movie = (props) => {
    if(!props.id) {
      return null;
    }
     return (
-        <div className='movie'>
-          <div className='poster'>
-            <img src={props.poster} alt='poster'/>
-          </div>
-          <div>
-            <button onClick={() => props.onDiscard()}>x</button>
-          </div>
-          <div className='short-summary'>
-            <div className='title'>
-              <h3>{props.title}  ({props.year})</h3>
+      <Grid>
+        <Row>
+          <Col md={4}>
+            <div className='poster'>
+              <img src={props.poster} alt='poster'/>
             </div>
-            <div className='short-plot'>
-              <p>{props.plot}</p>
+          </Col>
+          <Col md={7}>
+            <div className='short-summary'>
+              <div className='title'>
+                <h3>{props.title}  ({props.year})</h3>
+              </div>
+              <div className='short-plot'>
+                <p>{props.plot}</p>
+              </div>
+              <Button className='add-movie' bsStyle='success' bsSize='md' onClick={() => props.onAdd()}>Add to List</Button>
             </div>
-            <button onClick={() => props.onAdd()}>Add Movie Title</button>
-          </div>
-        </div>
+          </Col>
+          <Col md={1}>
+            <div className='short-prof-discard'>
+              <Button bsStyle='danger' bsSize='sm' onClick={() => props.onDiscard()}><Glyphicon glyph='remove'/></Button>
+            </div>
+          </Col>
+        </Row>
+      </Grid>
     );
 };
 

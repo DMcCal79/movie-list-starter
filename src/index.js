@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import LongProfile from './LongProfile'
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, Match, Miss } from 'react-router';
 
 const Router = () => {
