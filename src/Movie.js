@@ -21,12 +21,8 @@ const Movie = (props) => {
               <div className='short-plot'>
                 <p>{props.plot}</p>
               </div>
-              <Button className='add-movie' bsStyle='success' bsSize='md' onClick={() => props.onAdd()}>Add to List</Button>
-            </div>
-          </Col>
-          <Col md={1}>
-            <div className='short-prof-discard'>
-              <Button bsStyle='danger' bsSize='sm' onClick={() => props.onDiscard()}><Glyphicon glyph='remove'/></Button>
+              <Button className='short-profile-buttons' bsStyle='success' bsSize='md' onClick={() => props.onAdd()}><Glyphicon glyph='plus'/> Add to List</Button>
+              <Button className='short-profile-buttons' bsStyle='danger' bsSize='md' onClick={() => props.onDiscard()}><Glyphicon glyph='remove'/> Dismiss</Button>
             </div>
           </Col>
         </Row>

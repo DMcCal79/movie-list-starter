@@ -5,7 +5,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 
 const MovieList = (props) => {
     return(
-      <Grid>
+      <Grid className='movie-list-all'>
         <Row className='movie-list-row'>
           <div>
             <ul className='movie-list'>

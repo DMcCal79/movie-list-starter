@@ -1,17 +1,16 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+/*Styling for SearchBar.js component below*/
 
 .search {
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
 .search h1 {
   margin-bottom: 20px;
+  margin-top: 140px;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-weight: bold;
 }
 
 .search input {
@@ -22,58 +21,52 @@ body {
 .search-button {
   margin-left: 1%;
 }
-.short-prof-discard {
-  display: inline;
-}
-
-.movie {
-  /*display: inline-block;*/
-  margin-left: 5%;
-  margin-top: 20px;
-}
-
-.short-summary {
-  display: inline-block;
-  padding-top: 150px;
-}
+/*Styling for ShortProfile.js component below*/
 
 .short-profile {
   margin-bottom: 50px;
 }
-
-.add-movie {
-  margin-top:
-    30px;
-  }
 
 #not-found {
   text-align: center;
   margin-top: 5px;
   margin-bottom: 40px;
 }
-.poster {
 
+/*Styling for Movie.js component below*/
+
+.poster img {
+  height: 380px;
+  width: auto;
 }
+
+.short-summary {
+  display: inline-block;
+  padding-top: 100px;
+}
+
+.short-profile-buttons {
+  margin-top: 30px;
+  margin-right: 10px;
+}
+
+/*Styling for MovieList.js component below*/
 
 .movie-list {
   padding-left: 0;
+  padding-top: 50px;
 }
 
+.movie-list-container {
+  height: 320px;
+}
 
+/*Styling for MovieListItem.js component below*/
 
 .movie-list-item {
   list-style-type: none;
   display: inline;
   text-align: center;
-}
-
-.long-prof-facts {
-  list-style-type: none;
-}
-
-.remove-list-item {
-  display: inline-block;
-  height: 225px
 }
 
 .movie-item a {
@@ -106,6 +99,34 @@ body {
   right: 10%;
 }
 
-.movie-list-container {
-  height: 320px;
+/*Styling for LongProfile.js component below*/
+
+.bold {
+  font-weight: bold;
+}
+
+.long-prof-facts {
+  list-style-type: none;
+}
+
+.long-prof-group {
+  margin-top: 42px;
+}
+
+.long-prof-info {
+  margin-top: 22px;
+
+}
+.long-prof-facts {
+  padding-left: 0;
+}
+
+.long-prof-facts li {
+  padding-top: 10px;
+  font-size: 18px;
+}
+
+.long-prof-plot {
+  font-size: 18px;
+  margin-top: 42px;
 }
