@@ -11,7 +11,7 @@ const MovieList = (props) => {
             <ul className='movie-list'>
             {props.userMovies.map(movie => {
               return(
-                <Col md={2} xs={12} className='movie-list-container'>
+                <Col sm={2} xs={12} className='movie-list-container'>
                   <MovieListItem
                     key={movie.imdbID}
                     id={movie.imdbID}
