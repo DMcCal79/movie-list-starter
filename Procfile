@@ -1,1 +1,1 @@
-web: start index.js
+web: start index.html
