@@ -38,6 +38,7 @@
 .poster img {
   height: 380px;
   width: auto;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.18);
 }
 
 .short-summary {
@@ -76,6 +77,11 @@
 .movie-item-poster img {
   width: 70%;
   height: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.18);
+}
+
+.movie-item-poster img:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.18);
 }
 
 .movie-item-button  {
@@ -129,4 +135,8 @@
 .long-prof-plot {
   font-size: 18px;
   margin-top: 42px;
+}
+
+.long-prof-poster img {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.18);
 }
